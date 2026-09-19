@@ -1,0 +1,230 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#1C2A38" width="1920" height="1080"/>
+<rect fill="#223040" stroke="#2E4055" stroke-width="2" x="0" y="0" width="1920" height="880"/>
+
+<!-- Wall panel grid -->
+<line stroke="#1E2E3C" stroke-width="1.5" x1="0" y1="176" x2="1920" y2="176"/>
+<line stroke="#1E2E3C" stroke-width="1.5" x1="0" y1="352" x2="1920" y2="352"/>
+<line stroke="#1E2E3C" stroke-width="1.5" x1="0" y1="528" x2="1920" y2="528"/>
+<line stroke="#1E2E3C" stroke-width="1.5" x1="0" y1="704" x2="1920" y2="704"/>
+<line stroke="#1E2E3C" stroke-width="1.5" x1="192" y1="0" x2="192" y2="880"/>
+<line stroke="#1E2E3C" stroke-width="1.5" x1="384" y1="0" x2="384" y2="880"/>
+<line stroke="#1E2E3C" stroke-width="1.5" x1="576" y1="0" x2="576" y2="880"/>
+<line stroke="#1E2E3C" stroke-width="1.5" x1="768" y1="0" x2="768" y2="880"/>
+<line stroke="#1E2E3C" stroke-width="1.5" x1="960" y1="0" x2="960" y2="880"/>
+<line stroke="#1E2E3C" stroke-width="1.5" x1="1152" y1="0" x2="1152" y2="880"/>
+<line stroke="#1E2E3C" stroke-width="1.5" x1="1344" y1="0" x2="1344" y2="880"/>
+<line stroke="#1E2E3C" stroke-width="1.5" x1="1536" y1="0" x2="1536" y2="880"/>
+<line stroke="#1E2E3C" stroke-width="1.5" x1="1728" y1="0" x2="1728" y2="880"/>
+
+<!-- Panel rivets at intersections -->
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="192" cy="176" r="10"/><circle fill="#607A8A" cx="192" cy="176" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="384" cy="176" r="10"/><circle fill="#607A8A" cx="384" cy="176" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="576" cy="176" r="10"/><circle fill="#607A8A" cx="576" cy="176" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="768" cy="176" r="10"/><circle fill="#607A8A" cx="768" cy="176" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="960" cy="176" r="10"/><circle fill="#607A8A" cx="960" cy="176" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1152" cy="176" r="10"/><circle fill="#607A8A" cx="1152" cy="176" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1344" cy="176" r="10"/><circle fill="#607A8A" cx="1344" cy="176" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1536" cy="176" r="10"/><circle fill="#607A8A" cx="1536" cy="176" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1728" cy="176" r="10"/><circle fill="#607A8A" cx="1728" cy="176" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="192" cy="352" r="10"/><circle fill="#607A8A" cx="192" cy="352" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="384" cy="352" r="10"/><circle fill="#607A8A" cx="384" cy="352" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="576" cy="352" r="10"/><circle fill="#607A8A" cx="576" cy="352" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="768" cy="352" r="10"/><circle fill="#607A8A" cx="768" cy="352" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="960" cy="352" r="10"/><circle fill="#607A8A" cx="960" cy="352" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1152" cy="352" r="10"/><circle fill="#607A8A" cx="1152" cy="352" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1344" cy="352" r="10"/><circle fill="#607A8A" cx="1344" cy="352" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1536" cy="352" r="10"/><circle fill="#607A8A" cx="1536" cy="352" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1728" cy="352" r="10"/><circle fill="#607A8A" cx="1728" cy="352" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="192" cy="528" r="10"/><circle fill="#607A8A" cx="192" cy="528" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="384" cy="528" r="10"/><circle fill="#607A8A" cx="384" cy="528" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="576" cy="528" r="10"/><circle fill="#607A8A" cx="576" cy="528" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="768" cy="528" r="10"/><circle fill="#607A8A" cx="768" cy="528" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="960" cy="528" r="10"/><circle fill="#607A8A" cx="960" cy="528" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1152" cy="528" r="10"/><circle fill="#607A8A" cx="1152" cy="528" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1344" cy="528" r="10"/><circle fill="#607A8A" cx="1344" cy="528" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1536" cy="528" r="10"/><circle fill="#607A8A" cx="1536" cy="528" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1728" cy="528" r="10"/><circle fill="#607A8A" cx="1728" cy="528" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="192" cy="704" r="10"/><circle fill="#607A8A" cx="192" cy="704" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="384" cy="704" r="10"/><circle fill="#607A8A" cx="384" cy="704" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="576" cy="704" r="10"/><circle fill="#607A8A" cx="576" cy="704" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="768" cy="704" r="10"/><circle fill="#607A8A" cx="768" cy="704" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="960" cy="704" r="10"/><circle fill="#607A8A" cx="960" cy="704" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1152" cy="704" r="10"/><circle fill="#607A8A" cx="1152" cy="704" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1344" cy="704" r="10"/><circle fill="#607A8A" cx="1344" cy="704" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1536" cy="704" r="10"/><circle fill="#607A8A" cx="1536" cy="704" r="4"/>
+<circle fill="#4A6070" stroke="#374D5E" stroke-width="1" cx="1728" cy="704" r="10"/><circle fill="#607A8A" cx="1728" cy="704" r="4"/>
+
+<!-- Top pipe run -->
+<rect fill="#7A8FA0" stroke="#5A6F80" stroke-width="2" x="0" y="40" width="1920" height="40" rx="4"/>
+<rect fill="#9AAFBF" x="0" y="43" width="1920" height="8"/>
+<rect fill="#5A6F80" x="0" y="74" width="1920" height="8"/>
+<!-- Pipe collar joints -->
+<ellipse fill="#8A9FAF" stroke="#6A7F90" stroke-width="1.5" cx="290" cy="60" rx="28" ry="22"/>
+<ellipse fill="#6A7F90" cx="290" cy="60" rx="17" ry="13"/>
+<ellipse fill="#8A9FAF" stroke="#6A7F90" stroke-width="1.5" cx="672" cy="60" rx="28" ry="22"/>
+<ellipse fill="#6A7F90" cx="672" cy="60" rx="17" ry="13"/>
+<ellipse fill="#8A9FAF" stroke="#6A7F90" stroke-width="1.5" cx="1054" cy="60" rx="28" ry="22"/>
+<ellipse fill="#6A7F90" cx="1054" cy="60" rx="17" ry="13"/>
+<ellipse fill="#8A9FAF" stroke="#6A7F90" stroke-width="1.5" cx="1437" cy="60" rx="28" ry="22"/>
+<ellipse fill="#6A7F90" cx="1437" cy="60" rx="17" ry="13"/>
+<ellipse fill="#8A9FAF" stroke="#6A7F90" stroke-width="1.5" cx="1820" cy="60" rx="28" ry="22"/>
+<ellipse fill="#6A7F90" cx="1820" cy="60" rx="17" ry="13"/>
+
+<!-- Secondary pipe along top -->
+<rect fill="#7A8FA0" stroke="#5A6F80" stroke-width="1.5" x="0" y="110" width="1920" height="22" rx="3"/>
+<rect fill="#9AAFBF" x="0" y="113" width="1920" height="5"/>
+
+<!-- Right side vertical pipes -->
+<rect fill="#7A8FA0" stroke="#5A6F80" stroke-width="2" x="1856" y="80" width="64" height="570" rx="4"/>
+<rect fill="#9AAFBF" x="1859" y="80" width="12" height="570"/>
+<rect fill="#7A8FA0" stroke="#5A6F80" stroke-width="1.5" x="1784" y="230" width="24" height="370" rx="3"/>
+<rect fill="#7A8FA0" x="1784" y="460" width="72" height="22" rx="3"/>
+<rect fill="#7A8FA0" x="1784" y="620" width="72" height="22" rx="3"/>
+
+<!-- Left side vertical pipes -->
+<rect fill="#7A8FA0" stroke="#5A6F80" stroke-width="1.5" x="0" y="450" width="22" height="340" rx="3"/>
+<rect fill="#9AAFBF" x="3" y="450" width="5" height="340"/>
+<rect fill="#7A8FA0" x="0" y="540" width="85" height="22" rx="3"/>
+<rect fill="#7A8FA0" x="0" y="680" width="85" height="22" rx="3"/>
+
+<!-- Large gear — left side -->
+<g transform="translate(230,520)">
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="0,-88 18,-84 30,-72 26,-54 12,-46 -12,-46 -26,-54 -30,-72 -18,-84"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="0,88 18,84 30,72 26,54 12,46 -12,46 -26,54 -30,72 -18,84"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="-88,0 -84,-18 -72,-30 -54,-26 -46,-12 -46,12 -54,26 -72,30 -84,18"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="88,0 84,-18 72,-30 54,-26 46,-12 46,12 54,26 72,30 84,18"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="-62,-62 -48,-74 -32,-68 -28,-52 -40,-42 -56,-44"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="62,-62 48,-74 32,-68 28,-52 40,-42 56,-44"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="-62,62 -48,74 -32,68 -28,52 -40,42 -56,44"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="62,62 48,74 32,68 28,52 40,42 56,44"/>
+  <circle fill="#4A6175" cx="0" cy="0" r="64"/>
+  <circle fill="#374D60" stroke="#2E3F50" stroke-width="1.5" cx="0" cy="0" r="46"/>
+  <circle fill="#4A6175" cx="0" cy="0" r="28"/>
+  <circle fill="#0F1A24" cx="0" cy="0" r="14"/>
+  <circle fill="#5A7080" cx="0" cy="0" r="6"/>
+</g>
+
+<!-- Medium gear — upper left -->
+<g transform="translate(200,310)">
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="0,-56 12,-52 20,-42 16,-30 6,-26 -6,-26 -16,-30 -20,-42 -12,-52"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="0,56 12,52 20,42 16,30 6,26 -6,26 -16,30 -20,42 -12,52"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="-56,0 -52,-12 -42,-20 -30,-16 -26,-6 -26,6 -30,16 -42,20 -52,12"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="56,0 52,-12 42,-20 30,-16 26,-6 26,6 30,16 42,20 52,12"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="-40,-40 -30,-48 -18,-44 -16,-32 -26,-26 -38,-28"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="40,-40 30,-48 18,-44 16,-32 26,-26 38,-28"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="-40,40 -30,48 -18,44 -16,32 -26,26 -38,28"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="40,40 30,48 18,44 16,32 26,26 38,28"/>
+  <circle fill="#4A6175" cx="0" cy="0" r="40"/>
+  <circle fill="#374D60" stroke="#2E3F50" stroke-width="1.5" cx="0" cy="0" r="28"/>
+  <circle fill="#4A6175" cx="0" cy="0" r="16"/>
+  <circle fill="#0F1A24" cx="0" cy="0" r="8"/>
+</g>
+
+<!-- Large gear — right area -->
+<g transform="translate(1680,420)">
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="0,-70 15,-66 24,-54 20,-38 8,-32 -8,-32 -20,-38 -24,-54 -15,-66"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="0,70 15,66 24,54 20,38 8,32 -8,32 -20,38 -24,54 -15,66"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="-70,0 -66,-15 -54,-24 -38,-20 -32,-8 -32,8 -38,20 -54,24 -66,15"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="70,0 66,-15 54,-24 38,-20 32,-8 32,8 38,20 54,24 66,15"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="-50,-50 -38,-60 -24,-54 -22,-40 -32,-32 -46,-34"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="50,-50 38,-60 24,-54 22,-40 32,-32 46,-34"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="-50,50 -38,60 -24,54 -22,40 -32,32 -46,34"/>
+  <polygon fill="#374D60" stroke="#2E3F50" stroke-width="1.5" points="50,50 38,60 24,54 22,40 32,32 46,34"/>
+  <circle fill="#4A6175" cx="0" cy="0" r="52"/>
+  <circle fill="#374D60" stroke="#2E3F50" stroke-width="1.5" cx="0" cy="0" r="36"/>
+  <circle fill="#4A6175" cx="0" cy="0" r="22"/>
+  <circle fill="#0F1A24" cx="0" cy="0" r="11"/>
+</g>
+
+<!-- Pressure gauge — center right -->
+<rect fill="#0F1A24" x="1380" y="200" width="148" height="148" rx="10"/>
+<rect fill="#162230" stroke="#2E4055" stroke-width="1.5" x="1384" y="204" width="140" height="140" rx="8"/>
+<circle fill="#0A1828" stroke="#3A5570" stroke-width="2.5" cx="1454" cy="274" r="56"/>
+<circle fill="#0D2035" cx="1454" cy="274" r="45"/>
+<line stroke="#E8A030" stroke-width="4" stroke-linecap="round" x1="1454" y1="274" x2="1476" y2="244"/>
+<line stroke="#5A8AB0" stroke-width="3" stroke-linecap="round" x1="1454" y1="274" x2="1430" y2="298"/>
+<circle fill="#E8A030" cx="1454" cy="274" r="7"/>
+<text font-size="18" fill="#5A8AB0" font-family="monospace" x="1454" y="332" text-anchor="middle">PSI</text>
+
+<!-- Control panel boxes -->
+<rect fill="#1A3045" stroke="#2A4A65" stroke-width="1.5" x="960" y="410" width="214" height="170" rx="8"/>
+<rect fill="#0D1E2E" x="967" y="417" width="200" height="78" rx="5"/>
+<text font-size="17" fill="#4A8AB0" font-family="monospace" x="1067" y="442" text-anchor="middle">SORT ENGINE</text>
+<text font-size="24" fill="#60B0E0" font-family="monospace" font-weight="bold" x="1067" y="480" text-anchor="middle">ONLINE</text>
+<rect fill="#0A1E30" x="967" y="498" width="200" height="72" rx="5"/>
+<text font-size="15" fill="#304A60" font-family="monospace" x="1067" y="522" text-anchor="middle">SEQ: 0x4F3C</text>
+<text font-size="15" fill="#304A60" font-family="monospace" x="1067" y="548" text-anchor="middle">LOAD: 42%</text>
+
+<!-- Status indicators row -->
+<rect fill="#1A1A28" stroke="#2A2A40" stroke-width="1.5" x="440" y="600" width="285" height="172" rx="8"/>
+<rect fill="#0A0A18" x="448" y="608" width="269" height="50" rx="5"/>
+<text font-size="16" fill="#6060A0" font-family="monospace" x="582" y="626" text-anchor="middle">UNIT CTRL A-9</text>
+<text font-size="16" fill="#6060A0" font-family="monospace" x="582" y="648" text-anchor="middle">STATUS: IDLE</text>
+<rect fill="#0A1020" x="448" y="663" width="128" height="100" rx="5"/>
+<rect fill="#120A0A" x="580" y="663" width="128" height="100" rx="5"/>
+<text font-size="16" fill="#304040" font-family="monospace" x="512" y="695" text-anchor="middle">TEMP</text>
+<text font-size="22" fill="#40B0C0" font-family="monospace" font-weight="bold" x="512" y="730" text-anchor="middle">38°C</text>
+<text font-size="16" fill="#403040" font-family="monospace" x="644" y="695" text-anchor="middle">VIBR</text>
+<text font-size="22" fill="#B04080" font-family="monospace" font-weight="bold" x="644" y="730" text-anchor="middle">0.2g</text>
+
+<!-- Hazard stripe floor band -->
+<rect fill="#E8A020" x="0" y="866" width="1920" height="26"/>
+<rect fill="#1A2535" x="0" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="124" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="248" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="372" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="496" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="620" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="744" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="868" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="992" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="1116" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="1240" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="1364" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="1488" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="1612" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="1736" y="866" width="62" height="26"/>
+<rect fill="#1A2535" x="1860" y="866" width="60" height="26"/>
+
+<!-- Floor -->
+<rect fill="#16202C" x="0" y="892" width="1920" height="188"/>
+<line stroke="#1E2E3C" stroke-width="2" x1="0" y1="936" x2="1920" y2="936"/>
+<line stroke="#1E2E3C" stroke-width="2" x1="0" y1="980" x2="1920" y2="980"/>
+<line stroke="#1E2E3C" stroke-width="2" x1="0" y1="1024" x2="1920" y2="1024"/>
+<line stroke="#1A2A38" stroke-width="1.5" x1="240" y1="892" x2="240" y2="1080"/>
+<line stroke="#1A2A38" stroke-width="1.5" x1="480" y1="892" x2="480" y2="1080"/>
+<line stroke="#1A2A38" stroke-width="1.5" x1="720" y1="892" x2="720" y2="1080"/>
+<line stroke="#1A2A38" stroke-width="1.5" x1="960" y1="892" x2="960" y2="1080"/>
+<line stroke="#1A2A38" stroke-width="1.5" x1="1200" y1="892" x2="1200" y2="1080"/>
+<line stroke="#1A2A38" stroke-width="1.5" x1="1440" y1="892" x2="1440" y2="1080"/>
+<line stroke="#1A2A38" stroke-width="1.5" x1="1680" y1="892" x2="1680" y2="1080"/>
+
+<!-- Overhead lamp fixtures -->
+<rect fill="#E8A030" opacity="0.9" x="860" y="148" width="22" height="58" rx="3"/>
+<rect fill="#1A2535" x="855" y="138" width="32" height="16" rx="3"/>
+<circle fill="#FFCC60" opacity="0.8" cx="871" cy="142" r="12"/>
+<circle fill="#FFE090" opacity="0.45" cx="871" cy="142" r="18"/>
+
+<rect fill="#E8A030" opacity="0.9" x="1260" y="148" width="22" height="58" rx="3"/>
+<rect fill="#1A2535" x="1255" y="138" width="32" height="16" rx="3"/>
+<circle fill="#FFCC60" opacity="0.8" cx="1271" cy="142" r="12"/>
+<circle fill="#FFE090" opacity="0.45" cx="1271" cy="142" r="18"/>
+
+<!-- Steam vents right wall -->
+<ellipse fill="#B8D4E4" opacity="0.14" cx="1870" cy="370" rx="52" ry="86"/>
+<ellipse fill="#B8D4E4" opacity="0.10" cx="1890" cy="290" rx="36" ry="62"/>
+<ellipse fill="#B8D4E4" opacity="0.12" cx="1855" cy="454" rx="40" ry="68"/>
+
+<!-- Status LEDs top bar -->
+<rect fill="#E84040" opacity="0.8" x="108" y="142" width="18" height="18" rx="3"/>
+<rect fill="#40E050" opacity="0.8" x="136" y="142" width="18" height="18" rx="3"/>
+<rect fill="#E84040" opacity="0.8" x="554" y="142" width="18" height="18" rx="3"/>
+<rect fill="#40E050" opacity="0.8" x="582" y="142" width="18" height="18" rx="3"/>
+<rect fill="#40E050" opacity="0.8" x="938" y="142" width="18" height="18" rx="3"/>
+<rect fill="#E8A030" opacity="0.8" x="966" y="142" width="18" height="18" rx="3"/>
+<rect fill="#E84040" opacity="0.8" x="1322" y="142" width="18" height="18" rx="3"/>
+<rect fill="#40E050" opacity="0.8" x="1350" y="142" width="18" height="18" rx="3"/>
+<rect fill="#40E050" opacity="0.8" x="1706" y="142" width="18" height="18" rx="3"/>
+<rect fill="#E84040" opacity="0.8" x="1734" y="142" width="18" height="18" rx="3"/>
+</svg>
