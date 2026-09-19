@@ -1,0 +1,685 @@
+[gd_scene format=3 uid="uid://cppruyb4wk2no"]
+
+[ext_resource type="Script" uid="uid://bwr8ih6hvjgek" path="res://scripts/selectionsort.gd" id="1_jgy6k"]
+[ext_resource type="Texture2D" uid="uid://bv8w5cui5a2nm" path="res://assets/factory_background.png" id="2_7vxaq"]
+[ext_resource type="Texture2D" uid="uid://cbdliyemqj322" path="res://assets/ui/htp.png" id="2_s7c30"]
+[ext_resource type="FontFile" uid="uid://bowsocenoh5yr" path="res://assets/fonts/Roboto-Bold.ttf" id="3_o5bwt"]
+[ext_resource type="Texture2D" uid="uid://c1ah025k08tnm" path="res://assets/crates/10c.png" id="4_j8ytc"]
+[ext_resource type="Texture2D" uid="uid://cdap4qcc62bs4" path="res://assets/crates/20c.png" id="5_0j5aa"]
+[ext_resource type="Texture2D" uid="uid://ddewr4du24ybr" path="res://assets/crates/30c.png" id="6_c3l4q"]
+[ext_resource type="Texture2D" uid="uid://dal3th8esq6u0" path="res://assets/crates/40c.png" id="7_2de6f"]
+[ext_resource type="Texture2D" uid="uid://cwoguldfqvyf8" path="res://assets/crates/50c.png" id="8_jgy6k"]
+[ext_resource type="Texture2D" uid="uid://cjnsmnfddatyc" path="res://assets/crates/60c.png" id="9_6d8ie"]
+[ext_resource type="Texture2D" uid="uid://ctmc5me2hfwa7" path="res://assets/ui/hint.png" id="10_i4n7x"]
+[ext_resource type="Texture2D" uid="uid://cc64e4c00brc5" path="res://assets/ui/swap.png" id="11_xcigh"]
+[ext_resource type="Texture2D" uid="uid://dj75nwht01thh" path="res://assets/ui/reset.png" id="12_56juw"]
+[ext_resource type="Texture2D" uid="uid://bt2qse18taf7w" path="res://assets/ui/undo.png" id="13_4r2u5"]
+[ext_resource type="Texture2D" uid="uid://8jfn1h0fprpj" path="res://assets/ui/rail.png" id="14_c3l4q"]
+[ext_resource type="Texture2D" uid="uid://otp8txn3kasi" path="res://assets/ui/stars_1.png" id="16_2de6f"]
+[ext_resource type="Texture2D" uid="uid://dtwa4uxknse5s" path="res://assets/ui/gauge.png" id="19_56juw"]
+[ext_resource type="Script" uid="uid://583rm178iva7" path="res://scripts/sprite_2d.gd" id="20_4r2u5"]
+[ext_resource type="AudioStream" uid="uid://cvxmhq753iput" path="res://assets/music/cyberwave-orchestra-puzzle-game-bright-casual-video-game-music-249202.mp3" id="21_7vxaq"]
+[ext_resource type="PackedScene" path="res://scenes/processing_machine.tscn" id="pm_scene_sel"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c6b0s"]
+bg_color = Color(0.101960786, 0.101960786, 0.18039216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9098039, 0.627451, 0.1254902, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="Animation" id="Animation_grip_sel"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FingerL:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.20944, 0.20944]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FingerR:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.20944, -0.20944]
+}
+
+[sub_resource type="Animation" id="Animation_open_sel"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FingerL:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.20944, -0.20944]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FingerR:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.20944, 0.20944]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sel"]
+_data = {
+&"grip": SubResource("Animation_grip_sel"),
+&"open": SubResource("Animation_open_sel")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgy6k"]
+bg_color = Color(0.050980393, 0.105882354, 0.16470589, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9098039, 0.627451, 0.1254902, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6d8ie"]
+bg_color = Color(0.101960786, 0.22745098, 0.36078432, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.9098039, 0.627451, 0.1254902, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i4n7x"]
+bg_color = Color(0.039215688, 0.16470589, 0.29803923, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcigh"]
+bg_color = Color(0.16470589, 0.3529412, 0.54901963, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="SB_fail_panel"]
+bg_color = Color(0.1, 0.04, 0.04, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.15, 0.15, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Node2D" type="Node2D" unique_id=1242371767]
+script = ExtResource("1_jgy6k")
+
+[node name="diffbg" type="TextureRect" parent="." unique_id=1447611623]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1918.0
+offset_bottom = 1078.0
+texture = ExtResource("2_7vxaq")
+
+[node name="Howtoplaybtn" type="Button" parent="." unique_id=270688920]
+offset_left = 33.0
+offset_top = 33.0
+offset_right = 174.0
+offset_bottom = 151.0
+icon = ExtResource("2_s7c30")
+flat = true
+expand_icon = true
+
+[node name="Instruction" type="CanvasLayer" parent="Howtoplaybtn" unique_id=714702681]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="Howtoplaybtn/Instruction" unique_id=1890119372]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = -380.0
+offset_right = 560.0
+offset_bottom = 380.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_c6b0s")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Howtoplaybtn/Instruction/PanelContainer" unique_id=1538383558]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Howtoplaybtn/Instruction/PanelContainer/VBoxContainer" unique_id=950793961]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9098039, 0.627451, 0.1254902, 1)
+theme_override_fonts/font = ExtResource("3_o5bwt")
+theme_override_font_sizes/font_size = 40
+text = "HOW TO PLAY"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Howtoplaybtn/Instruction/PanelContainer/VBoxContainer" unique_id=1677050423]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9043591, 0.63341963, 0.0692023, 1)
+theme_override_font_sizes/font_size = 35
+text = "SELECTION SORT"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Howtoplaybtn/Instruction/PanelContainer/VBoxContainer" unique_id=321931777]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "━━━━━━━━━━━━━━
+Sort LOWEST to HIGHEST.
+📦 PRIORITY ID:
+Lower number = ships first.
+Crate 10 is most urgent.
+Crate 60 is least urgent.
+HOW IT WORKS:
+Find the MINIMUM crate in
+the unsorted region.
+Swap it to the leftmost
+unsorted slot.
+Lock it. Repeat.
+
+HINT:
+Gold crates are locked —
+already in final position.
+▼ HERE arrow = next slot to fill.
+
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="10c" type="TextureButton" parent="." unique_id=654230855]
+offset_left = 819.0
+offset_top = 407.0
+offset_right = 1000.0
+offset_bottom = 583.0
+texture_normal = ExtResource("4_j8ytc")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="20c" type="TextureButton" parent="." unique_id=1048103499]
+offset_left = 1028.0
+offset_top = 405.0
+offset_right = 1218.0
+offset_bottom = 584.0
+texture_normal = ExtResource("5_0j5aa")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="30c" type="TextureButton" parent="." unique_id=50252792]
+offset_left = 1253.0
+offset_top = 403.0
+offset_right = 1433.0
+offset_bottom = 586.0
+texture_normal = ExtResource("6_c3l4q")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="40c" type="TextureButton" parent="." unique_id=1214240433]
+offset_left = 604.0
+offset_top = 403.0
+offset_right = 781.0
+offset_bottom = 582.0
+texture_normal = ExtResource("7_2de6f")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="50c" type="TextureButton" parent="." unique_id=1401508873]
+offset_left = 169.0
+offset_top = 402.0
+offset_right = 352.0
+offset_bottom = 585.0
+texture_normal = ExtResource("8_jgy6k")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="60c" type="TextureButton" parent="." unique_id=1269245575]
+offset_left = 399.0
+offset_top = 403.0
+offset_right = 576.0
+offset_bottom = 583.0
+texture_normal = ExtResource("9_6d8ie")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="hintbtn" type="TextureButton" parent="." unique_id=961151226]
+offset_left = 288.0
+offset_top = 781.0
+offset_right = 501.0
+offset_bottom = 933.0
+texture_normal = ExtResource("10_i4n7x")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="swapbtn" type="TextureButton" parent="." unique_id=913373659]
+offset_left = 534.0
+offset_top = 779.0
+offset_right = 762.0
+offset_bottom = 939.0
+texture_normal = ExtResource("11_xcigh")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="resetbtn" type="TextureButton" parent="." unique_id=1191817554]
+offset_left = 760.0
+offset_top = 782.0
+offset_right = 1014.0
+offset_bottom = 939.0
+texture_normal = ExtResource("12_56juw")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="undobtn" type="TextureButton" parent="." unique_id=1449150061]
+offset_left = 988.0
+offset_top = 778.0
+offset_right = 1275.0
+offset_bottom = 937.0
+texture_normal = ExtResource("13_4r2u5")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Rail" type="Sprite2D" parent="." unique_id=52064705]
+position = Vector2(989, 27)
+scale = Vector2(1.5864583, 1)
+texture = ExtResource("14_c3l4q")
+
+[node name="Claw" type="Node2D" parent="." unique_id=1268567189]
+position = Vector2(319, 340)
+scale = Vector2(3.2, 3.2)
+
+[node name="Cable" type="Line2D" parent="Claw" unique_id=1268567190]
+points = PackedVector2Array(0, -105, 0, 0)
+width = 6.0
+default_color = Color(0.85, 0.82, 0.6, 1)
+
+[node name="ClawBody" type="Polygon2D" parent="Claw" unique_id=1268567191]
+color = Color(0.55, 0.62, 0.72, 1)
+polygon = PackedVector2Array(-18, -8, 18, -8, 18, 8, -18, 8)
+
+[node name="ClawBodyHighlight" type="Polygon2D" parent="Claw" unique_id=1268567192]
+color = Color(0.78, 0.85, 0.92, 1)
+polygon = PackedVector2Array(-18, -8, 18, -8, 18, -5, -18, -5)
+
+[node name="ClawPin" type="Polygon2D" parent="Claw" unique_id=1268567193]
+color = Color(1, 0.85, 0.2, 1)
+polygon = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[node name="FingerL" type="Polygon2D" parent="Claw" unique_id=1268567194]
+position = Vector2(-20, 10)
+rotation = -0.20944
+color = Color(0.45, 0.52, 0.6, 1)
+polygon = PackedVector2Array(-5, 0, 5, 0, 5, 22, -5, 22)
+
+[node name="FingerC" type="Polygon2D" parent="Claw" unique_id=1268567195]
+position = Vector2(0, 10)
+color = Color(0.45, 0.52, 0.6, 1)
+polygon = PackedVector2Array(-5, 0, 5, 0, 5, 22, -5, 22)
+
+[node name="FingerR" type="Polygon2D" parent="Claw" unique_id=1268567196]
+position = Vector2(20, 10)
+rotation = 0.20944
+color = Color(0.45, 0.52, 0.6, 1)
+polygon = PackedVector2Array(-5, 0, 5, 0, 5, 22, -5, 22)
+
+[node name="Anim" type="AnimationPlayer" parent="Claw" unique_id=1268567197]
+libraries/ = SubResource("AnimationLibrary_sel")
+
+[node name="Label" type="Label" parent="." unique_id=572780476]
+offset_left = 179.0
+offset_top = 342.0
+offset_right = 340.0
+offset_bottom = 411.0
+theme_override_colors/font_color = Color(0.93162215, 0.016697472, 1.1551381e-06, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_o5bwt")
+theme_override_font_sizes/font_size = 45
+text = "▼ HERE"
+
+[node name="Winpoint" type="CanvasLayer" parent="." unique_id=1264242111]
+visible = false
+
+[node name="Panel" type="Panel" parent="Winpoint" unique_id=1204506260]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -348.0
+offset_right = 322.0
+offset_bottom = 306.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_jgy6k")
+
+[node name="Label" type="Label" parent="Winpoint/Panel" unique_id=1325101347]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -141.0
+offset_top = 43.0
+offset_right = 141.0
+offset_bottom = 85.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.9411765, 0.7529412, 0.2509804, 1)
+theme_override_fonts/font = ExtResource("3_o5bwt")
+theme_override_font_sizes/font_size = 45
+text = "SHIFT COMPLETE"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Winpoint/Panel" unique_id=7029297]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -163.0
+offset_top = 132.0
+offset_right = 163.0
+offset_bottom = 160.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.2509804, 1, 0.5019608, 1)
+theme_override_fonts/font = ExtResource("3_o5bwt")
+theme_override_font_sizes/font_size = 25
+text = "SORTING PROTOCOL SUCCESSFUL"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Winpoint/Panel" unique_id=1176085609]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -392.0
+offset_top = 241.0
+offset_right = 456.0
+offset_bottom = 364.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="1star" type="TextureRect" parent="Winpoint/Panel/HBoxContainer" unique_id=218207744]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("16_2de6f")
+
+[node name="moves" type="Label" parent="Winpoint/Panel" unique_id=224625744]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -47.5
+offset_top = -231.0
+offset_right = 47.5
+offset_bottom = -207.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_o5bwt")
+theme_override_font_sizes/font_size = 20
+text = "MOVES : 0"
+
+[node name="efficiency" type="Label" parent="Winpoint/Panel" unique_id=575244076]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -142.5
+offset_top = -185.0
+offset_right = 142.5
+offset_bottom = -161.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_o5bwt")
+theme_override_font_sizes/font_size = 20
+text = "EFFICIENCY REMAINING : HIGH"
+
+[node name="retrybtn" type="Button" parent="Winpoint/Panel" unique_id=769911052]
+custom_minimum_size = Vector2(180, 55)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 89.0
+offset_top = -149.0
+offset_right = 269.0
+offset_bottom = -94.0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6d8ie")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i4n7x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xcigh")
+text = "RETRY"
+
+[node name="nextlevelbtn" type="Button" parent="Winpoint/Panel" unique_id=1509119274]
+custom_minimum_size = Vector2(180, 55)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -270.0
+offset_top = -147.0
+offset_right = -90.0
+offset_bottom = -92.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6d8ie")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i4n7x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xcigh")
+text = "NEXT LEVEL"
+
+[node name="mainmenubtn" type="Button" parent="Winpoint/Panel" unique_id=2076420195]
+custom_minimum_size = Vector2(180, 55)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -88.0
+offset_top = -72.0
+offset_right = 92.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6d8ie")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i4n7x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xcigh")
+text = "MAIN MENU"
+
+[node name="gauge" type="Sprite2D" parent="." unique_id=2141882379]
+position = Vector2(1724, 445)
+scale = Vector2(0.11281596, 0.09322032)
+texture = ExtResource("19_56juw")
+script = ExtResource("20_4r2u5")
+
+[node name="gauge2" type="Sprite2D" parent="." unique_id=2138666357]
+position = Vector2(1846.0001, 447)
+scale = Vector2(0.11281596, 0.09322032)
+texture = ExtResource("19_56juw")
+script = ExtResource("20_4r2u5")
+
+[node name="gauge3" type="Sprite2D" parent="." unique_id=1541256778]
+position = Vector2(1737, 91.000015)
+scale = Vector2(0.11281596, 0.09322032)
+texture = ExtResource("19_56juw")
+script = ExtResource("20_4r2u5")
+
+[node name="gauge4" type="Sprite2D" parent="." unique_id=1303703927]
+position = Vector2(1407.0001, 180.00002)
+scale = Vector2(0.11281596, 0.09322032)
+texture = ExtResource("19_56juw")
+script = ExtResource("20_4r2u5")
+
+[node name="InstructionLabel" type="Label" parent="." unique_id=998877665]
+offset_left = 100.0
+offset_top = 195.0
+offset_right = 1500.0
+offset_bottom = 330.0
+theme_override_colors/font_color = Color(0.3, 0.85, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_o5bwt")
+theme_override_font_sizes/font_size = 35
+text = "Find and tap the SMALLEST unsorted crate"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1523138088]
+stream = ExtResource("21_7vxaq")
+volume_db = 1.0
+autoplay = true
+
+[node name="ProcessingMachine" parent="." unique_id=1536645286 instance=ExtResource("pm_scene_sel")]
+position = Vector2(1623, 382)
+scale = Vector2(2, 2)
+
+[node name="RedFlash" type="CanvasLayer" parent="." unique_id=898540526]
+
+[node name="ColorRect" type="ColorRect" parent="RedFlash" unique_id=1965144751]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0.85, 0.05, 0.05, 1)
+
+[node name="Failpoint" type="CanvasLayer" parent="." unique_id=1483889973]
+visible = false
+
+[node name="Panel" type="Panel" parent="Failpoint" unique_id=691334952]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -220.0
+offset_right = 300.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("SB_fail_panel")
+
+[node name="Title" type="Label" parent="Failpoint/Panel" unique_id=297209096]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 30.0
+offset_right = 200.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_fonts/font = ExtResource("3_o5bwt")
+theme_override_font_sizes/font_size = 48
+text = "SYSTEM FAILURE"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Failpoint/Panel" unique_id=733102108]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_top = 100.0
+offset_right = 240.0
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("3_o5bwt")
+theme_override_font_sizes/font_size = 22
+text = "EFFICIENCY CRITICAL — PRODUCTION HALTED"
+horizontal_alignment = 1
+
+[node name="moves" type="Label" parent="Failpoint/Panel" unique_id=1320248470]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 148.0
+offset_right = 80.0
+offset_bottom = 175.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_o5bwt")
+theme_override_font_sizes/font_size = 22
+text = "MOVES : 0"
+horizontal_alignment = 1
+
+[node name="retrybtn" type="Button" parent="Failpoint/Panel" unique_id=1122399545]
+custom_minimum_size = Vector2(180, 55)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -100.0
+offset_right = 210.0
+offset_bottom = -45.0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6d8ie")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i4n7x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xcigh")
+text = "RETRY"
+
+[node name="mainmenubtn" type="Button" parent="Failpoint/Panel" unique_id=1164738967]
+custom_minimum_size = Vector2(180, 55)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -100.0
+offset_right = -30.0
+offset_bottom = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_6d8ie")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_i4n7x")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xcigh")
+text = "MAIN MENU"

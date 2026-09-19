@@ -1,0 +1,547 @@
+[gd_scene format=3 uid="uid://b8cmd73s8xajp"]
+
+[ext_resource type="Texture2D" uid="uid://716fnheaij76" path="res://assets/ui/difficulty_background.png" id="1_uyxjx"]
+[ext_resource type="Texture2D" uid="uid://cmk64htjkc3bc" path="res://assets/ui/btnBack.png" id="2_uhspr"]
+[ext_resource type="Script" uid="uid://cg5i7u20a68y1" path="res://scripts/backbtn.gd" id="3_c6ia3"]
+[ext_resource type="AudioStream" uid="uid://cvxmhq753iput" path="res://assets/music/cyberwave-orchestra-puzzle-game-bright-casual-video-game-music-249202.mp3" id="5_uyxjx"]
+[ext_resource type="FontFile" uid="uid://bowsocenoh5yr" path="res://assets/fonts/Roboto-Bold.ttf" id="6_opt"]
+[ext_resource type="Script" uid="uid://bgydqp2vm0y2b" path="res://scenes/option.gd" id="7_opt"]
+
+[sub_resource type="StyleBoxFlat" id="SB_main"]
+bg_color = Color(0.05, 0.11, 0.18, 0.97)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.961, 0.659, 0, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="SB_section"]
+bg_color = Color(0.08, 0.18, 0.28, 1)
+border_width_bottom = 2
+border_color = Color(0.961, 0.659, 0, 0.6)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+
+[sub_resource type="StyleBoxFlat" id="SB_btn"]
+bg_color = Color(0.08, 0.18, 0.3, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.961, 0.659, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="SB_btn_press"]
+bg_color = Color(0.04, 0.1, 0.2, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="SB_btn_hover"]
+bg_color = Color(0.12, 0.26, 0.42, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.961, 0.659, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="SB_reset"]
+bg_color = Color(0.45, 0.06, 0.06, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.25, 0.25, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="SB_reset_hover"]
+bg_color = Color(0.65, 0.09, 0.09, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 0.4, 0.4, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="SB_confirm"]
+bg_color = Color(0.07, 0.14, 0.22, 0.98)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.25, 0.25, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="Node2D" type="Node2D" unique_id=1547081872]
+script = ExtResource("7_opt")
+
+[node name="menubg" type="TextureRect" parent="." unique_id=861580979]
+offset_right = 1919.0
+offset_bottom = 1079.0
+texture = ExtResource("1_uyxjx")
+
+[node name="Backbtn" type="Button" parent="menubg" unique_id=170060885]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 30.0
+offset_right = 315.0
+offset_bottom = 163.0
+icon = ExtResource("2_uhspr")
+expand_icon = true
+script = ExtResource("3_c6ia3")
+
+[node name="BrightnessLayer" type="CanvasModulate" parent="." unique_id=1053922396]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1983469709]
+stream = ExtResource("5_uyxjx")
+volume_db = 1.0
+autoplay = true
+
+[node name="OptionsPanel" type="Panel" parent="." unique_id=1133673867]
+offset_left = 260.0
+offset_top = 70.0
+offset_right = 1660.0
+offset_bottom = 1010.0
+theme_override_styles/panel = SubResource("SB_main")
+
+[node name="Title" type="Label" parent="OptionsPanel" unique_id=1430491902]
+layout_mode = 0
+offset_top = 18.0
+offset_right = 1400.0
+offset_bottom = 72.0
+theme_override_colors/font_color = Color(0.961, 0.659, 0, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 44
+text = "OPTIONS"
+horizontal_alignment = 1
+
+[node name="TitleDivider" type="Panel" parent="OptionsPanel" unique_id=1422286832]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 74.0
+offset_right = 1370.0
+offset_bottom = 78.0
+theme_override_styles/panel = SubResource("SB_section")
+
+[node name="VBox" type="VBoxContainer" parent="OptionsPanel" unique_id=2106187476]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 88.0
+offset_right = 1370.0
+offset_bottom = 930.0
+theme_override_constants/separation = 6
+
+[node name="AudioSection" type="VBoxContainer" parent="OptionsPanel/VBox" unique_id=1485068799]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="AudioHeader" type="Panel" parent="OptionsPanel/VBox/AudioSection" unique_id=1894682351]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+theme_override_styles/panel = SubResource("SB_section")
+
+[node name="AudioLabel" type="Label" parent="OptionsPanel/VBox/AudioSection/AudioHeader" unique_id=1091340566]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 500.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.961, 0.659, 0, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 24
+text = "⚙  AUDIO"
+
+[node name="MusicRow" type="HBoxContainer" parent="OptionsPanel/VBox/AudioSection" unique_id=1127186318]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="MusicLabel" type="Label" parent="OptionsPanel/VBox/AudioSection/MusicRow" unique_id=959252770]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.9, 0.95, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 22
+text = "  Music Volume"
+
+[node name="MusicSlider" type="HSlider" parent="OptionsPanel/VBox/AudioSection/MusicRow" unique_id=289296398]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="ValLabel" type="Label" parent="OptionsPanel/VBox/AudioSection/MusicRow" unique_id=1077301500]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.961, 0.659, 0, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 22
+text = "100%"
+horizontal_alignment = 2
+
+[node name="SFXRow" type="HBoxContainer" parent="OptionsPanel/VBox/AudioSection" unique_id=710188962]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="SFXLabel" type="Label" parent="OptionsPanel/VBox/AudioSection/SFXRow" unique_id=1139226871]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.9, 0.95, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 22
+text = "  SFX Volume"
+
+[node name="SFXSlider" type="HSlider" parent="OptionsPanel/VBox/AudioSection/SFXRow" unique_id=1885322610]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="ValLabel" type="Label" parent="OptionsPanel/VBox/AudioSection/SFXRow" unique_id=1458010587]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.961, 0.659, 0, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 22
+text = "100%"
+horizontal_alignment = 2
+
+[node name="MuteRow" type="HBoxContainer" parent="OptionsPanel/VBox/AudioSection" unique_id=545346606]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="MuteLabel" type="Label" parent="OptionsPanel/VBox/AudioSection/MuteRow" unique_id=328103534]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.9, 0.95, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 22
+text = "  Mute All"
+
+[node name="MuteToggle" type="CheckButton" parent="OptionsPanel/VBox/AudioSection/MuteRow" unique_id=1497504796]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 20
+text = "OFF"
+
+[node name="DisplaySection" type="VBoxContainer" parent="OptionsPanel/VBox" unique_id=196130812]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="DisplayHeader" type="Panel" parent="OptionsPanel/VBox/DisplaySection" unique_id=786484196]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+theme_override_styles/panel = SubResource("SB_section")
+
+[node name="DisplayLabel" type="Label" parent="OptionsPanel/VBox/DisplaySection/DisplayHeader" unique_id=599642849]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 500.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.961, 0.659, 0, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 24
+text = "☀  DISPLAY"
+
+[node name="BrightnessRow" type="HBoxContainer" parent="OptionsPanel/VBox/DisplaySection" unique_id=555833776]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="BrightnessLabel" type="Label" parent="OptionsPanel/VBox/DisplaySection/BrightnessRow" unique_id=557875837]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.9, 0.95, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 22
+text = "  Brightness"
+
+[node name="BrightnessSlider" type="HSlider" parent="OptionsPanel/VBox/DisplaySection/BrightnessRow" unique_id=493873658]
+custom_minimum_size = Vector2(800, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+min_value = 0.2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="ValLabel" type="Label" parent="OptionsPanel/VBox/DisplaySection/BrightnessRow" unique_id=2016460860]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.961, 0.659, 0, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 22
+text = "100%"
+horizontal_alignment = 2
+
+[node name="GameplaySection" type="VBoxContainer" parent="OptionsPanel/VBox" unique_id=1739026835]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="GameplayHeader" type="Panel" parent="OptionsPanel/VBox/GameplaySection" unique_id=569422823]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+theme_override_styles/panel = SubResource("SB_section")
+
+[node name="GameplayLabel" type="Label" parent="OptionsPanel/VBox/GameplaySection/GameplayHeader" unique_id=1482057899]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 500.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.961, 0.659, 0, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 24
+text = "🎮  GAMEPLAY"
+
+[node name="HintRow" type="HBoxContainer" parent="OptionsPanel/VBox/GameplaySection" unique_id=2087705267]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="HintLabel" type="Label" parent="OptionsPanel/VBox/GameplaySection/HintRow" unique_id=664478405]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.9, 0.95, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 22
+text = "  Hint Mode"
+
+[node name="HintToggle" type="CheckButton" parent="OptionsPanel/VBox/GameplaySection/HintRow" unique_id=329366772]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 20
+button_pressed = true
+text = "ON"
+
+[node name="HintSubLabel" type="Label" parent="OptionsPanel/VBox/GameplaySection/HintRow" unique_id=1426021428]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.65, 0.75, 1)
+theme_override_font_sizes/font_size = 18
+text = "  (show instruction text & digit labels automatically)"
+
+[node name="AnimRow" type="HBoxContainer" parent="OptionsPanel/VBox/GameplaySection" unique_id=1575518807]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+theme_override_constants/separation = 14
+
+[node name="AnimLabel" type="Label" parent="OptionsPanel/VBox/GameplaySection/AnimRow" unique_id=318414177]
+custom_minimum_size = Vector2(240, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85, 0.9, 0.95, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 22
+text = "  Crane Speed"
+
+[node name="AnimBtns" type="HBoxContainer" parent="OptionsPanel/VBox/GameplaySection/AnimRow" unique_id=2005992262]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 10
+
+[node name="NormalBtn" type="Button" parent="OptionsPanel/VBox/GameplaySection/AnimRow/AnimBtns" unique_id=1666393609]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("SB_btn")
+theme_override_styles/pressed = SubResource("SB_btn_press")
+theme_override_styles/hover = SubResource("SB_btn_hover")
+text = "NORMAL"
+
+[node name="FastBtn" type="Button" parent="OptionsPanel/VBox/GameplaySection/AnimRow/AnimBtns" unique_id=1982646901]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("SB_btn")
+theme_override_styles/pressed = SubResource("SB_btn_press")
+theme_override_styles/hover = SubResource("SB_btn_hover")
+text = "FAST"
+
+[node name="InstantBtn" type="Button" parent="OptionsPanel/VBox/GameplaySection/AnimRow/AnimBtns" unique_id=1800427291]
+custom_minimum_size = Vector2(160, 44)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("SB_btn")
+theme_override_styles/pressed = SubResource("SB_btn_press")
+theme_override_styles/hover = SubResource("SB_btn_hover")
+text = "INSTANT"
+
+[node name="AnimSubLabel" type="Label" parent="OptionsPanel/VBox/GameplaySection/AnimRow" unique_id=326765833]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0.65, 0.75, 1)
+theme_override_font_sizes/font_size = 18
+text = "  Normal = 0.35 s   Fast = 0.15 s   Instant = skip animation"
+
+[node name="ProgressSection" type="VBoxContainer" parent="OptionsPanel/VBox" unique_id=644324263]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="ProgressHeader" type="Panel" parent="OptionsPanel/VBox/ProgressSection" unique_id=1882882602]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+theme_override_styles/panel = SubResource("SB_section")
+
+[node name="ProgressLabel" type="Label" parent="OptionsPanel/VBox/ProgressSection/ProgressHeader" unique_id=2032387978]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 500.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.961, 0.659, 0, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 24
+text = "📊  PROGRESS"
+
+[node name="ResetRow" type="HBoxContainer" parent="OptionsPanel/VBox/ProgressSection" unique_id=1359754449]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="ResetInfoLabel" type="Label" parent="OptionsPanel/VBox/ProgressSection/ResetRow" unique_id=1474572545]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.8, 0.85, 1)
+theme_override_font_sizes/font_size = 20
+text = "  Clears all unlocked levels and scores. Cannot be undone."
+autowrap_mode = 2
+
+[node name="ResetBtn" type="Button" parent="OptionsPanel/VBox/ProgressSection/ResetRow" unique_id=1231431641]
+custom_minimum_size = Vector2(280, 48)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 0.85, 0.85, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = SubResource("SB_reset")
+theme_override_styles/pressed = SubResource("SB_btn_press")
+theme_override_styles/hover = SubResource("SB_reset_hover")
+text = "RESET ALL PROGRESS"
+
+[node name="AboutSection" type="VBoxContainer" parent="OptionsPanel/VBox" unique_id=1489014447]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="AboutHeader" type="Panel" parent="OptionsPanel/VBox/AboutSection" unique_id=581352016]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+theme_override_styles/panel = SubResource("SB_section")
+
+[node name="AboutHeaderLabel" type="Label" parent="OptionsPanel/VBox/AboutSection/AboutHeader" unique_id=1053458482]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 6.0
+offset_right = 500.0
+offset_bottom = 38.0
+theme_override_colors/font_color = Color(0.961, 0.659, 0, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 24
+text = "ℹ  ABOUT"
+
+[node name="AboutContent" type="VBoxContainer" parent="OptionsPanel/VBox/AboutSection" unique_id=433197797]
+layout_mode = 2
+theme_override_constants/separation = 2
+
+[node name="VersionLabel" type="Label" parent="OptionsPanel/VBox/AboutSection/AboutContent" unique_id=265714842]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.961, 0.659, 0, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 20
+text = "  DataSort Factory  v2.0"
+
+[node name="TeamLabel" type="Label" parent="OptionsPanel/VBox/AboutSection/AboutContent" unique_id=1379813857]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.75, 0.82, 0.9, 1)
+theme_override_font_sizes/font_size = 19
+text = "  Developed by four IT students — Universidad de Manila"
+
+[node name="PurposeLabel" type="Label" parent="OptionsPanel/VBox/AboutSection/AboutContent" unique_id=1108978694]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.6, 0.7, 0.8, 1)
+theme_override_font_sizes/font_size = 18
+text = "  DSA Capstone Project  ·  Sort. Learn. Master."
+
+[node name="ConfirmPanel" type="Panel" parent="." unique_id=2036002949]
+visible = false
+offset_left = 610.0
+offset_top = 390.0
+offset_right = 1310.0
+offset_bottom = 690.0
+theme_override_styles/panel = SubResource("SB_confirm")
+
+[node name="ConfirmLabel" type="Label" parent="ConfirmPanel" unique_id=459822608]
+layout_mode = 0
+offset_top = 40.0
+offset_right = 700.0
+offset_bottom = 130.0
+theme_override_colors/font_color = Color(1, 0.85, 0.85, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 26
+text = "Reset ALL progress?
+This cannot be undone."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="YesBtn" type="Button" parent="ConfirmPanel" unique_id=402627710]
+layout_mode = 0
+offset_left = 90.0
+offset_top = 190.0
+offset_right = 310.0
+offset_bottom = 252.0
+theme_override_colors/font_color = Color(1, 0.8, 0.8, 1)
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("SB_reset")
+theme_override_styles/pressed = SubResource("SB_btn_press")
+theme_override_styles/hover = SubResource("SB_reset_hover")
+text = "YES, RESET"
+
+[node name="NoBtn" type="Button" parent="ConfirmPanel" unique_id=1328055908]
+layout_mode = 0
+offset_left = 390.0
+offset_top = 190.0
+offset_right = 610.0
+offset_bottom = 252.0
+theme_override_fonts/font = ExtResource("6_opt")
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("SB_btn")
+theme_override_styles/pressed = SubResource("SB_btn_press")
+theme_override_styles/hover = SubResource("SB_btn_hover")
+text = "CANCEL"
+
+[connection signal="pressed" from="menubg/Backbtn" to="menubg/Backbtn" method="_on_pressed"]

@@ -1,0 +1,770 @@
+[gd_scene format=3 uid="uid://0cdfnpjnnyro"]
+
+[ext_resource type="Script" uid="uid://c2i7xkqn7ak3c" path="res://scenes/shellsort.gd" id="1_shell"]
+[ext_resource type="Texture2D" uid="uid://716fnheaij76" path="res://assets/ui/difficulty_background.png" id="2_8jyrx"]
+[ext_resource type="Texture2D" uid="uid://cbdliyemqj322" path="res://assets/ui/htp.png" id="2_sh002"]
+[ext_resource type="FontFile" uid="uid://bowsocenoh5yr" path="res://assets/fonts/Roboto-Bold.ttf" id="3_sh001"]
+[ext_resource type="Texture2D" uid="uid://c1ah025k08tnm" path="res://assets/crates/10c.png" id="4_sh001"]
+[ext_resource type="Texture2D" uid="uid://cdap4qcc62bs4" path="res://assets/crates/20c.png" id="5_sh001"]
+[ext_resource type="Texture2D" uid="uid://ddewr4du24ybr" path="res://assets/crates/30c.png" id="6_sh001"]
+[ext_resource type="Texture2D" uid="uid://dal3th8esq6u0" path="res://assets/crates/40c.png" id="7_sh001"]
+[ext_resource type="Texture2D" uid="uid://cwoguldfqvyf8" path="res://assets/crates/50c.png" id="8_sh001"]
+[ext_resource type="Texture2D" uid="uid://cjnsmnfddatyc" path="res://assets/crates/60c.png" id="9_sh001"]
+[ext_resource type="Texture2D" uid="uid://ctmc5me2hfwa7" path="res://assets/ui/hint.png" id="10_sh01"]
+[ext_resource type="Texture2D" uid="uid://cc64e4c00brc5" path="res://assets/ui/swap.png" id="11_sh01"]
+[ext_resource type="Texture2D" uid="uid://bv6jq8233unml" path="res://assets/crates/80c.png" id="12_4ryx3"]
+[ext_resource type="Texture2D" uid="uid://dj75nwht01thh" path="res://assets/ui/reset.png" id="12_sh01"]
+[ext_resource type="Texture2D" uid="uid://d3l0m20vfxj46" path="res://assets/crates/90c.png" id="13_8jyrx"]
+[ext_resource type="Texture2D" uid="uid://bt2qse18taf7w" path="res://assets/ui/undo.png" id="13_sh01"]
+[ext_resource type="Texture2D" uid="uid://8jfn1h0fprpj" path="res://assets/ui/rail.png" id="14_sh01"]
+[ext_resource type="Texture2D" uid="uid://otp8txn3kasi" path="res://assets/ui/stars_1.png" id="16_sh01"]
+[ext_resource type="Texture2D" uid="uid://xo1i4dywm78d" path="res://assets/ui/skip.png" id="18_8jyrx"]
+[ext_resource type="Texture2D" uid="uid://dtwa4uxknse5s" path="res://assets/ui/gauge.png" id="19_sh01"]
+[ext_resource type="Script" uid="uid://583rm178iva7" path="res://scripts/sprite_2d.gd" id="20_sh01"]
+[ext_resource type="AudioStream" uid="uid://cvxmhq753iput" path="res://assets/music/cyberwave-orchestra-puzzle-game-bright-casual-video-game-music-249202.mp3" id="21_sh01"]
+[ext_resource type="Texture2D" uid="uid://bhut8qmigkp6k" path="res://assets/crates/70c.png" id="22_sh01"]
+[ext_resource type="PackedScene" path="res://scenes/processing_machine.tscn" id="pm_scene_sh"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sh001"]
+bg_color = Color(0.101960786, 0.101960786, 0.18039216, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9098039, 0.627451, 0.1254902, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+
+[sub_resource type="Animation" id="Animation_grip_sh"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FingerL:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.20944, 0.20944]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FingerR:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.20944, -0.20944]
+}
+
+[sub_resource type="Animation" id="Animation_open_sh"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FingerL:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.20944, -0.20944]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FingerR:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-0.20944, 0.20944]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sh"]
+_data = {
+&"grip": SubResource("Animation_grip_sh"),
+&"open": SubResource("Animation_open_sh")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sh002"]
+bg_color = Color(0.050980393, 0.105882354, 0.16470589, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.9098039, 0.627451, 0.1254902, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sh003"]
+bg_color = Color(0.101960786, 0.22745098, 0.36078432, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.9098039, 0.627451, 0.1254902, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sh004"]
+bg_color = Color(0.039215688, 0.16470589, 0.29803923, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sh005"]
+bg_color = Color(0.16470589, 0.3529412, 0.54901963, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="SB_fail_panel"]
+bg_color = Color(0.1, 0.04, 0.04, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.85, 0.15, 0.15, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[node name="shellsort" type="Node2D" unique_id=8800001]
+script = ExtResource("1_shell")
+
+[node name="diffbg" type="TextureRect" parent="." unique_id=8800002]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1918.0
+offset_bottom = 1078.0
+texture = ExtResource("2_8jyrx")
+
+[node name="Howtoplaybtn" type="Button" parent="." unique_id=8800003]
+offset_left = 14.0
+offset_top = 18.0
+offset_right = 157.0
+offset_bottom = 136.0
+icon = ExtResource("2_sh002")
+flat = true
+expand_icon = true
+
+[node name="Instruction" type="CanvasLayer" parent="Howtoplaybtn" unique_id=8800004]
+visible = false
+
+[node name="PanelContainer" type="PanelContainer" parent="Howtoplaybtn/Instruction" unique_id=8800005]
+custom_minimum_size = Vector2(50, 50)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -560.0
+offset_top = -380.0
+offset_right = 560.0
+offset_bottom = 380.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sh001")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Howtoplaybtn/Instruction/PanelContainer" unique_id=8800006]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="Howtoplaybtn/Instruction/PanelContainer/VBoxContainer" unique_id=8800007]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9098039, 0.627451, 0.1254902, 1)
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 40
+text = "HOW TO PLAY"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="Howtoplaybtn/Instruction/PanelContainer/VBoxContainer" unique_id=8800008]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.9043591, 0.63341963, 0.0692023, 1)
+theme_override_font_sizes/font_size = 35
+text = "SHELL SORT"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Howtoplaybtn/Instruction/PanelContainer/VBoxContainer" unique_id=8800009]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "━━━━━━━━━━━━━━
+Sort LOWEST to HIGHEST.
+
+LIKE INSERTION SORT — WITH GAPS:
+Crates GAP positions apart are compared.
+The GAP starts large (3) then shrinks to 1.
+
+HOW IT WORKS:
+1. Orange crate = LEFT (bigger, needs moving).
+   Blue crate = RIGHT (smaller, correct pos).
+2. Press SWAP when prompted — the crane
+   moves the larger crate right by GAP steps.
+3. Repeat until no more out-of-order pairs.
+4. When GAP = 1, it's standard Insertion Sort.
+   Sorted crates lock GOLD automatically.
+
+SWAP is always automatic — just press it
+when the instruction says ⚠️ !
+
+Gold = locked in correct final position.
+"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="GapLabel" type="Label" parent="." unique_id=8800010]
+offset_left = 580.0
+offset_top = 52.0
+offset_right = 1120.0
+offset_bottom = 135.0
+theme_override_colors/font_color = Color(1, 0.85, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 6
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 52
+text = "GAP = 3"
+horizontal_alignment = 1
+
+[node name="GapArcs" type="Node2D" parent="." unique_id=8800011]
+
+[node name="50c" type="TextureButton" parent="." unique_id=8800020]
+offset_left = 40.0
+offset_top = 420.0
+offset_right = 160.0
+offset_bottom = 540.0
+texture_normal = ExtResource("8_sh001")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="10c" type="TextureButton" parent="." unique_id=8800021]
+offset_left = 170.0
+offset_top = 420.0
+offset_right = 290.0
+offset_bottom = 540.0
+texture_normal = ExtResource("4_sh001")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="60c" type="TextureButton" parent="." unique_id=8800022]
+offset_left = 300.0
+offset_top = 420.0
+offset_right = 420.0
+offset_bottom = 540.0
+texture_normal = ExtResource("9_sh001")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="20c" type="TextureButton" parent="." unique_id=8800023]
+offset_left = 430.0
+offset_top = 420.0
+offset_right = 550.0
+offset_bottom = 540.0
+texture_normal = ExtResource("5_sh001")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="40c" type="TextureButton" parent="." unique_id=8800024]
+offset_left = 560.0
+offset_top = 420.0
+offset_right = 680.0
+offset_bottom = 540.0
+texture_normal = ExtResource("7_sh001")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="30c" type="TextureButton" parent="." unique_id=8800025]
+offset_left = 690.0
+offset_top = 420.0
+offset_right = 810.0
+offset_bottom = 540.0
+texture_normal = ExtResource("6_sh001")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="70c" type="TextureButton" parent="." unique_id=8800026]
+offset_left = 820.0
+offset_top = 420.0
+offset_right = 940.0
+offset_bottom = 540.0
+texture_normal = ExtResource("22_sh01")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="80c" type="TextureButton" parent="." unique_id=8800027]
+offset_left = 950.0
+offset_top = 420.0
+offset_right = 1070.0
+offset_bottom = 540.0
+texture_normal = ExtResource("12_4ryx3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="90c" type="TextureButton" parent="." unique_id=8800028]
+offset_left = 1080.0
+offset_top = 420.0
+offset_right = 1200.0
+offset_bottom = 540.0
+texture_normal = ExtResource("13_8jyrx")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="hintbtn" type="TextureButton" parent="." unique_id=8800030]
+offset_left = 266.0
+offset_top = 780.0
+offset_right = 474.0
+offset_bottom = 936.0
+texture_normal = ExtResource("10_sh01")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="swapbtn" type="TextureButton" parent="." unique_id=8800031]
+offset_left = 534.0
+offset_top = 779.0
+offset_right = 762.0
+offset_bottom = 939.0
+texture_normal = ExtResource("11_sh01")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="resetbtn" type="TextureButton" parent="." unique_id=8800032]
+offset_left = 819.0
+offset_top = 765.0
+offset_right = 1042.0
+offset_bottom = 953.0
+texture_normal = ExtResource("12_sh01")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="undobtn" type="TextureButton" parent="." unique_id=8800033]
+offset_left = 1100.0
+offset_top = 777.0
+offset_right = 1321.0
+offset_bottom = 935.0
+texture_normal = ExtResource("13_sh01")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="skipbtn" type="TextureButton" parent="." unique_id=8800037]
+offset_left = 1362.0
+offset_top = 772.0
+offset_right = 1575.0
+offset_bottom = 945.0
+texture_normal = ExtResource("18_8jyrx")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Rail" type="Sprite2D" parent="." unique_id=8800040]
+position = Vector2(989, 27)
+scale = Vector2(1.5864583, 1)
+texture = ExtResource("14_sh01")
+
+[node name="Claw" type="Node2D" parent="." unique_id=8800050]
+position = Vector2(319, 340)
+scale = Vector2(3.2, 3.2)
+
+[node name="Cable" type="Line2D" parent="Claw" unique_id=8800051]
+points = PackedVector2Array(0, -105, 0, 0)
+width = 6.0
+default_color = Color(0.85, 0.82, 0.6, 1)
+
+[node name="ClawBody" type="Polygon2D" parent="Claw" unique_id=8800052]
+color = Color(0.55, 0.62, 0.72, 1)
+polygon = PackedVector2Array(-18, -8, 18, -8, 18, 8, -18, 8)
+
+[node name="ClawBodyHighlight" type="Polygon2D" parent="Claw" unique_id=8800053]
+color = Color(0.78, 0.85, 0.92, 1)
+polygon = PackedVector2Array(-18, -8, 18, -8, 18, -5, -18, -5)
+
+[node name="ClawPin" type="Polygon2D" parent="Claw" unique_id=8800054]
+color = Color(1, 0.85, 0.2, 1)
+polygon = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+
+[node name="FingerL" type="Polygon2D" parent="Claw" unique_id=8800055]
+position = Vector2(-20, 10)
+rotation = -0.20944
+color = Color(0.45, 0.52, 0.6, 1)
+polygon = PackedVector2Array(-5, 0, 5, 0, 5, 22, -5, 22)
+
+[node name="FingerC" type="Polygon2D" parent="Claw" unique_id=8800056]
+position = Vector2(0, 10)
+color = Color(0.45, 0.52, 0.6, 1)
+polygon = PackedVector2Array(-5, 0, 5, 0, 5, 22, -5, 22)
+
+[node name="FingerR" type="Polygon2D" parent="Claw" unique_id=8800057]
+position = Vector2(20, 10)
+rotation = 0.20944
+color = Color(0.45, 0.52, 0.6, 1)
+polygon = PackedVector2Array(-5, 0, 5, 0, 5, 22, -5, 22)
+
+[node name="Anim" type="AnimationPlayer" parent="Claw" unique_id=8800058]
+libraries/ = SubResource("AnimationLibrary_sh")
+
+[node name="InstructionLabel" type="Label" parent="." unique_id=8800060]
+offset_left = 100.0
+offset_top = 155.0
+offset_right = 1520.0
+offset_bottom = 340.0
+theme_override_colors/font_color = Color(0.3, 0.85, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 33
+text = "Initialising Shell Sort..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=8800061]
+offset_left = 399.0
+offset_top = 342.0
+offset_right = 560.0
+offset_bottom = 411.0
+theme_override_colors/font_color = Color(0.93162215, 0.016697472, 1.1551381e-06, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 45
+text = "▼ HERE"
+
+[node name="Winpoint" type="CanvasLayer" parent="." unique_id=8800070]
+visible = false
+
+[node name="Panel" type="Panel" parent="Winpoint" unique_id=8800071]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -480.0
+offset_top = -400.0
+offset_right = 480.0
+offset_bottom = 400.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sh002")
+
+[node name="TitleLabel" type="Label" parent="Winpoint/Panel" unique_id=8800072]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 18.0
+offset_right = 200.0
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.9411765, 0.7529412, 0.2509804, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 40
+text = "⚙  LEVEL COMPLETE  ⚙"
+horizontal_alignment = 1
+
+[node name="SubtitleLabel" type="Label" parent="Winpoint/Panel" unique_id=8800073]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -379.0
+offset_top = 188.0
+offset_right = 380.0
+offset_bottom = 219.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.2509804, 1, 0.5019608, 1)
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 25
+text = "SHELL SORT MASTERED — SORTING PROTOCOL SUCCESSFUL"
+horizontal_alignment = 1
+
+[node name="Divider1" type="Label" parent="Winpoint/Panel" unique_id=8800074]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -440.0
+offset_top = 232.0
+offset_right = 440.0
+offset_bottom = 246.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.9098039, 0.627451, 0.1254902, 0.6)
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 10
+text = "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+horizontal_alignment = 1
+
+[node name="AlgoInfoTitle" type="Label" parent="Winpoint/Panel" unique_id=8800075]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -438.0
+offset_top = 256.0
+offset_right = 442.0
+offset_bottom = 340.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.3, 0.85, 1, 1)
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 22
+text = "📋  SHELL SORT — O(n log² n)  |  Gap sequence: n/2 → n/4 → … → 1
+Generalization of Insertion Sort using decreasing gaps.
+Large gaps move elements quickly; gap=1 finishes with standard Insertion Sort."
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Winpoint/Panel" unique_id=8800076]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -40.0
+offset_right = 140.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="1star" type="TextureRect" parent="Winpoint/Panel/HBoxContainer" unique_id=8800077]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("16_sh01")
+
+[node name="moves" type="Label" parent="Winpoint/Panel" unique_id=8800078]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -103.0
+offset_top = 567.0
+offset_right = 97.0
+offset_bottom = 598.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 25
+text = "MOVES : 0"
+horizontal_alignment = 1
+
+[node name="efficiency" type="Label" parent="Winpoint/Panel" unique_id=8800079]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -193.0
+offset_top = 466.0
+offset_right = 207.0
+offset_bottom = 497.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.2509804, 1, 0.5019608, 1)
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 25
+text = "EFFICIENCY REMAINING : HIGH"
+horizontal_alignment = 1
+
+[node name="retrybtn" type="Button" parent="Winpoint/Panel" unique_id=8800080]
+custom_minimum_size = Vector2(180, 55)
+layout_mode = 1
+offset_left = 82.0
+offset_top = 661.0
+offset_right = 262.0
+offset_bottom = 716.0
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_sh003")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sh004")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sh005")
+text = "RETRY"
+
+[node name="nextlevelbtn" type="Button" parent="Winpoint/Panel" unique_id=8800081]
+custom_minimum_size = Vector2(180, 55)
+layout_mode = 1
+offset_left = 385.0
+offset_top = 666.0
+offset_right = 565.0
+offset_bottom = 721.0
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_sh003")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sh004")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sh005")
+text = "NEXT LEVEL"
+
+[node name="mainmenubtn" type="Button" parent="Winpoint/Panel" unique_id=8800082]
+custom_minimum_size = Vector2(180, 55)
+layout_mode = 1
+offset_left = 672.0
+offset_top = 662.0
+offset_right = 852.0
+offset_bottom = 717.0
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/normal = SubResource("StyleBoxFlat_sh003")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sh004")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sh005")
+text = "MAIN MENU"
+
+[node name="gauge" type="Sprite2D" parent="." unique_id=8800092]
+position = Vector2(1724, 445)
+scale = Vector2(0.11281596, 0.09322032)
+texture = ExtResource("19_sh01")
+script = ExtResource("20_sh01")
+
+[node name="gauge2" type="Sprite2D" parent="." unique_id=8800093]
+position = Vector2(1846.0001, 447)
+scale = Vector2(0.11281596, 0.09322032)
+texture = ExtResource("19_sh01")
+script = ExtResource("20_sh01")
+
+[node name="gauge3" type="Sprite2D" parent="." unique_id=8800094]
+position = Vector2(1737, 91.000015)
+scale = Vector2(0.11281596, 0.09322032)
+texture = ExtResource("19_sh01")
+script = ExtResource("20_sh01")
+
+[node name="gauge4" type="Sprite2D" parent="." unique_id=8800095]
+position = Vector2(1407.0001, 180.00002)
+scale = Vector2(0.11281596, 0.09322032)
+texture = ExtResource("19_sh01")
+script = ExtResource("20_sh01")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=8800096]
+stream = ExtResource("21_sh01")
+volume_db = 1.0
+autoplay = true
+
+[node name="ProcessingMachine" parent="." unique_id=1308534451 instance=ExtResource("pm_scene_sh")]
+position = Vector2(1623, 382)
+scale = Vector2(2, 2)
+
+[node name="RedFlash" type="CanvasLayer" parent="." unique_id=543350858]
+
+[node name="ColorRect" type="ColorRect" parent="RedFlash" unique_id=126256709]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+mouse_filter = 2
+color = Color(0.85, 0.05, 0.05, 1)
+
+[node name="Failpoint" type="CanvasLayer" parent="." unique_id=599355259]
+visible = false
+
+[node name="Panel" type="Panel" parent="Failpoint" unique_id=1134912877]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -220.0
+offset_right = 300.0
+offset_bottom = 220.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("SB_fail_panel")
+
+[node name="Title" type="Label" parent="Failpoint/Panel" unique_id=888369432]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 30.0
+offset_right = 200.0
+offset_bottom = 80.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 0.2, 0.2, 1)
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 48
+text = "SYSTEM FAILURE"
+horizontal_alignment = 1
+
+[node name="Subtitle" type="Label" parent="Failpoint/Panel" unique_id=1325781269]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_top = 100.0
+offset_right = 240.0
+offset_bottom = 135.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0.8, 0.4, 0.4, 1)
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 22
+text = "EFFICIENCY CRITICAL — PRODUCTION HALTED"
+horizontal_alignment = 1
+
+[node name="moves" type="Label" parent="Failpoint/Panel" unique_id=706940880]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -80.0
+offset_top = 148.0
+offset_right = 80.0
+offset_bottom = 175.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_sh001")
+theme_override_font_sizes/font_size = 22
+text = "MOVES : 0"
+horizontal_alignment = 1
+
+[node name="retrybtn" type="Button" parent="Failpoint/Panel" unique_id=872790977]
+custom_minimum_size = Vector2(180, 55)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -100.0
+offset_right = 210.0
+offset_bottom = -45.0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_sh003")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sh004")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sh005")
+text = "RETRY"
+
+[node name="mainmenubtn" type="Button" parent="Failpoint/Panel" unique_id=1864792102]
+custom_minimum_size = Vector2(180, 55)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -210.0
+offset_top = -100.0
+offset_right = -30.0
+offset_bottom = -45.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_sh003")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sh004")
+theme_override_styles/hover = SubResource("StyleBoxFlat_sh005")
+text = "MAIN MENU"

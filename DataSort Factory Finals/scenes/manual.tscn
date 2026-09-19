@@ -1,0 +1,601 @@
+[gd_scene format=3 uid="uid://ccw6xrnjwrsjk"]
+
+[ext_resource type="Texture2D"   uid="uid://716fnheaij76"  path="res://assets/ui/difficulty_background.png" id="1_4c15j"]
+[ext_resource type="Texture2D"   uid="uid://cmk64htjkc3bc" path="res://assets/ui/btnBack.png"               id="2_xt3po"]
+[ext_resource type="FontFile"    uid="uid://bowsocenoh5yr" path="res://assets/fonts/Roboto-Bold.ttf"        id="4_font"]
+[ext_resource type="AudioStream" uid="uid://cvxmhq753iput" path="res://assets/music/cyberwave-orchestra-puzzle-game-bright-casual-video-game-music-249202.mp3" id="6_4c15j"]
+[ext_resource type="Script" path="res://scripts/manual.gd" id="7_manual"]
+
+[sub_resource type="StyleBoxFlat" id="SB_header"]
+bg_color            = Color(0.043, 0.078, 0.110, 0.98)
+border_width_bottom = 3
+border_color        = Color(0.549, 0.392, 0.055, 1)
+
+[sub_resource type="StyleBoxFlat" id="SB_modal"]
+bg_color            = Color(0.050, 0.110, 0.170, 1)
+border_width_left   = 2
+border_width_top    = 8
+border_width_right  = 2
+border_width_bottom = 2
+border_color        = Color(0.941, 0.753, 0.251, 1)
+corner_radius_top_left     = 6
+corner_radius_top_right    = 6
+corner_radius_bottom_left  = 6
+corner_radius_bottom_right = 6
+
+[sub_resource type="StyleBoxFlat" id="SB_easy"]
+bg_color            = Color(0.040, 0.090, 0.120, 1)
+border_width_left   = 5
+border_width_top    = 2
+border_width_right  = 2
+border_width_bottom = 2
+border_color        = Color(0.18, 0.80, 0.44, 1)
+corner_radius_top_left     = 8
+corner_radius_top_right    = 8
+corner_radius_bottom_left  = 8
+corner_radius_bottom_right = 8
+
+[sub_resource type="StyleBoxFlat" id="SB_inter"]
+bg_color            = Color(0.040, 0.090, 0.120, 1)
+border_width_left   = 5
+border_width_top    = 2
+border_width_right  = 2
+border_width_bottom = 2
+border_color        = Color(0.96, 0.77, 0.09, 1)
+corner_radius_top_left     = 8
+corner_radius_top_right    = 8
+corner_radius_bottom_left  = 8
+corner_radius_bottom_right = 8
+
+[sub_resource type="StyleBoxFlat" id="SB_adv"]
+bg_color            = Color(0.040, 0.090, 0.120, 1)
+border_width_left   = 5
+border_width_top    = 2
+border_width_right  = 2
+border_width_bottom = 2
+border_color        = Color(0.91, 0.30, 0.24, 1)
+corner_radius_top_left     = 8
+corner_radius_top_right    = 8
+corner_radius_bottom_left  = 8
+corner_radius_bottom_right = 8
+
+[sub_resource type="StyleBoxEmpty" id="SB_empty"]
+
+[sub_resource type="StyleBoxFlat" id="SB_scroll_bg"]
+bg_color = Color(0.05, 0.11, 0.17, 0)
+
+[node name="Node2D" type="Node2D" unique_id=749309661]
+script = ExtResource("7_manual")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BgRect" type="ColorRect" parent="CanvasLayer"]
+offset_right  = 1920.0
+offset_bottom = 1080.0
+color = Color(0.050, 0.110, 0.170, 1)
+
+[node name="BgTexture" type="TextureRect" parent="CanvasLayer"]
+offset_right  = 1920.0
+offset_bottom = 1080.0
+texture  = ExtResource("1_4c15j")
+modulate = Color(1, 1, 1, 0.35)
+
+[node name="HeaderPanel" type="Panel" parent="CanvasLayer"]
+offset_right  = 1920.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("SB_header")
+
+[node name="TealAccent" type="ColorRect" parent="CanvasLayer/HeaderPanel"]
+offset_right  = 1920.0
+offset_bottom = 4.0
+color = Color(0.078, 0.471, 0.471, 1)
+
+[node name="GoldAccent" type="ColorRect" parent="CanvasLayer/HeaderPanel"]
+offset_top    = 4.0
+offset_right  = 1920.0
+offset_bottom = 7.0
+color = Color(0.549, 0.392, 0.055, 1)
+
+[node name="PageTitle" type="Label" parent="CanvasLayer/HeaderPanel"]
+offset_left   = 240.0
+offset_top    = 8.0
+offset_right  = 1920.0
+offset_bottom = 60.0
+theme_override_colors/font_color         = Color(0.941, 0.753, 0.251, 1)
+theme_override_colors/font_shadow_color  = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 42
+text = "DATASORT MANUAL"
+horizontal_alignment = 1
+
+[node name="StatusLabel" type="Label" parent="CanvasLayer/HeaderPanel"]
+offset_left   = 240.0
+offset_top    = 60.0
+offset_right  = 1920.0
+offset_bottom = 94.0
+theme_override_colors/font_color    = Color(0.32, 0.71, 0.71, 1)
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 18
+text = "SELECT AN ALGORITHM TO VIEW DATA"
+horizontal_alignment = 1
+
+[node name="BackBtn" type="Button" parent="CanvasLayer/HeaderPanel"]
+offset_left   = 8.0
+offset_top    = 8.0
+offset_right  = 228.0
+offset_bottom = 94.0
+icon        = ExtResource("2_xt3po")
+expand_icon = true
+theme_override_styles/normal  = SubResource("SB_empty")
+theme_override_styles/hover   = SubResource("SB_empty")
+theme_override_styles/pressed = SubResource("SB_empty")
+theme_override_styles/focus   = SubResource("SB_empty")
+
+[node name="CardsContainer" type="Control" parent="CanvasLayer"]
+offset_left   = 0.0
+offset_top    = 100.0
+offset_right  = 1920.0
+offset_bottom = 1080.0
+
+[node name="BubbleCard" type="Panel" parent="CanvasLayer/CardsContainer"]
+offset_left   = 155.0
+offset_top    = 275.0
+offset_right  = 535.0
+offset_bottom = 475.0
+theme_override_styles/panel = SubResource("SB_easy")
+metadata/algo = "Bubble Sort"
+
+[node name="AccentBar" type="ColorRect" parent="CanvasLayer/CardsContainer/BubbleCard"]
+offset_right  = 380.0
+offset_bottom = 4.0
+color = Color(0.18, 0.80, 0.44, 0.5)
+
+[node name="AlgoName" type="Label" parent="CanvasLayer/CardsContainer/BubbleCard"]
+offset_left   = 20.0
+offset_top    = 20.0
+offset_right  = 360.0
+offset_bottom = 130.0
+theme_override_colors/font_color         = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color  = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 36
+text = "BUBBLE SORT"
+autowrap_mode = 2
+
+[node name="TierName" type="Label" parent="CanvasLayer/CardsContainer/BubbleCard"]
+offset_left   = 20.0
+offset_top    = 148.0
+offset_right  = 360.0
+offset_bottom = 186.0
+theme_override_colors/font_color    = Color(0.18, 0.80, 0.44, 1)
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 18
+text = "EASY"
+
+[node name="CardBtn" type="Button" parent="CanvasLayer/CardsContainer/BubbleCard"]
+offset_right  = 380.0
+offset_bottom = 200.0
+flat = true
+theme_override_styles/normal  = SubResource("SB_empty")
+theme_override_styles/hover   = SubResource("SB_empty")
+theme_override_styles/pressed = SubResource("SB_empty")
+theme_override_styles/focus   = SubResource("SB_empty")
+
+[node name="SelectionCard" type="Panel" parent="CanvasLayer/CardsContainer"]
+offset_left   = 565.0
+offset_top    = 275.0
+offset_right  = 945.0
+offset_bottom = 475.0
+theme_override_styles/panel = SubResource("SB_easy")
+metadata/algo = "Selection Sort"
+
+[node name="AccentBar" type="ColorRect" parent="CanvasLayer/CardsContainer/SelectionCard"]
+offset_right  = 380.0
+offset_bottom = 4.0
+color = Color(0.18, 0.80, 0.44, 0.5)
+
+[node name="AlgoName" type="Label" parent="CanvasLayer/CardsContainer/SelectionCard"]
+offset_left   = 20.0
+offset_top    = 20.0
+offset_right  = 360.0
+offset_bottom = 130.0
+theme_override_colors/font_color         = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color  = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 36
+text = "SELECTION SORT"
+autowrap_mode = 2
+
+[node name="TierName" type="Label" parent="CanvasLayer/CardsContainer/SelectionCard"]
+offset_left   = 20.0
+offset_top    = 148.0
+offset_right  = 360.0
+offset_bottom = 186.0
+theme_override_colors/font_color    = Color(0.18, 0.80, 0.44, 1)
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 18
+text = "EASY"
+
+[node name="CardBtn" type="Button" parent="CanvasLayer/CardsContainer/SelectionCard"]
+offset_right  = 380.0
+offset_bottom = 200.0
+flat = true
+theme_override_styles/normal  = SubResource("SB_empty")
+theme_override_styles/hover   = SubResource("SB_empty")
+theme_override_styles/pressed = SubResource("SB_empty")
+theme_override_styles/focus   = SubResource("SB_empty")
+
+[node name="InsertionCard" type="Panel" parent="CanvasLayer/CardsContainer"]
+offset_left   = 975.0
+offset_top    = 275.0
+offset_right  = 1355.0
+offset_bottom = 475.0
+theme_override_styles/panel = SubResource("SB_easy")
+metadata/algo = "Insertion Sort"
+
+[node name="AccentBar" type="ColorRect" parent="CanvasLayer/CardsContainer/InsertionCard"]
+offset_right  = 380.0
+offset_bottom = 4.0
+color = Color(0.18, 0.80, 0.44, 0.5)
+
+[node name="AlgoName" type="Label" parent="CanvasLayer/CardsContainer/InsertionCard"]
+offset_left   = 20.0
+offset_top    = 20.0
+offset_right  = 360.0
+offset_bottom = 130.0
+theme_override_colors/font_color         = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color  = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 36
+text = "INSERTION SORT"
+autowrap_mode = 2
+
+[node name="TierName" type="Label" parent="CanvasLayer/CardsContainer/InsertionCard"]
+offset_left   = 20.0
+offset_top    = 148.0
+offset_right  = 360.0
+offset_bottom = 186.0
+theme_override_colors/font_color    = Color(0.18, 0.80, 0.44, 1)
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 18
+text = "EASY"
+
+[node name="CardBtn" type="Button" parent="CanvasLayer/CardsContainer/InsertionCard"]
+offset_right  = 380.0
+offset_bottom = 200.0
+flat = true
+theme_override_styles/normal  = SubResource("SB_empty")
+theme_override_styles/hover   = SubResource("SB_empty")
+theme_override_styles/pressed = SubResource("SB_empty")
+theme_override_styles/focus   = SubResource("SB_empty")
+
+[node name="MergeCard" type="Panel" parent="CanvasLayer/CardsContainer"]
+offset_left   = 1385.0
+offset_top    = 275.0
+offset_right  = 1765.0
+offset_bottom = 475.0
+theme_override_styles/panel = SubResource("SB_inter")
+metadata/algo = "Merge Sort"
+
+[node name="AccentBar" type="ColorRect" parent="CanvasLayer/CardsContainer/MergeCard"]
+offset_right  = 380.0
+offset_bottom = 4.0
+color = Color(0.96, 0.77, 0.09, 0.5)
+
+[node name="AlgoName" type="Label" parent="CanvasLayer/CardsContainer/MergeCard"]
+offset_left   = 20.0
+offset_top    = 20.0
+offset_right  = 360.0
+offset_bottom = 130.0
+theme_override_colors/font_color         = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color  = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 36
+text = "MERGE SORT"
+autowrap_mode = 2
+
+[node name="TierName" type="Label" parent="CanvasLayer/CardsContainer/MergeCard"]
+offset_left   = 20.0
+offset_top    = 148.0
+offset_right  = 360.0
+offset_bottom = 186.0
+theme_override_colors/font_color    = Color(0.96, 0.77, 0.09, 1)
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 18
+text = "INTERMEDIATE"
+
+[node name="CardBtn" type="Button" parent="CanvasLayer/CardsContainer/MergeCard"]
+offset_right  = 380.0
+offset_bottom = 200.0
+flat = true
+theme_override_styles/normal  = SubResource("SB_empty")
+theme_override_styles/hover   = SubResource("SB_empty")
+theme_override_styles/pressed = SubResource("SB_empty")
+theme_override_styles/focus   = SubResource("SB_empty")
+
+[node name="QuickCard" type="Panel" parent="CanvasLayer/CardsContainer"]
+offset_left   = 155.0
+offset_top    = 535.0
+offset_right  = 535.0
+offset_bottom = 735.0
+theme_override_styles/panel = SubResource("SB_inter")
+metadata/algo = "Quick Sort"
+
+[node name="AccentBar" type="ColorRect" parent="CanvasLayer/CardsContainer/QuickCard"]
+offset_right  = 380.0
+offset_bottom = 4.0
+color = Color(0.96, 0.77, 0.09, 0.5)
+
+[node name="AlgoName" type="Label" parent="CanvasLayer/CardsContainer/QuickCard"]
+offset_left   = 20.0
+offset_top    = 20.0
+offset_right  = 360.0
+offset_bottom = 130.0
+theme_override_colors/font_color         = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color  = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 36
+text = "QUICK SORT"
+autowrap_mode = 2
+
+[node name="TierName" type="Label" parent="CanvasLayer/CardsContainer/QuickCard"]
+offset_left   = 20.0
+offset_top    = 148.0
+offset_right  = 360.0
+offset_bottom = 186.0
+theme_override_colors/font_color    = Color(0.96, 0.77, 0.09, 1)
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 18
+text = "INTERMEDIATE"
+
+[node name="CardBtn" type="Button" parent="CanvasLayer/CardsContainer/QuickCard"]
+offset_right  = 380.0
+offset_bottom = 200.0
+flat = true
+theme_override_styles/normal  = SubResource("SB_empty")
+theme_override_styles/hover   = SubResource("SB_empty")
+theme_override_styles/pressed = SubResource("SB_empty")
+theme_override_styles/focus   = SubResource("SB_empty")
+
+[node name="HeapCard" type="Panel" parent="CanvasLayer/CardsContainer"]
+offset_left   = 565.0
+offset_top    = 535.0
+offset_right  = 945.0
+offset_bottom = 735.0
+theme_override_styles/panel = SubResource("SB_adv")
+metadata/algo = "Heap Sort"
+
+[node name="AccentBar" type="ColorRect" parent="CanvasLayer/CardsContainer/HeapCard"]
+offset_right  = 380.0
+offset_bottom = 4.0
+color = Color(0.91, 0.30, 0.24, 0.5)
+
+[node name="AlgoName" type="Label" parent="CanvasLayer/CardsContainer/HeapCard"]
+offset_left   = 20.0
+offset_top    = 20.0
+offset_right  = 360.0
+offset_bottom = 130.0
+theme_override_colors/font_color         = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color  = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 36
+text = "HEAP SORT"
+autowrap_mode = 2
+
+[node name="TierName" type="Label" parent="CanvasLayer/CardsContainer/HeapCard"]
+offset_left   = 20.0
+offset_top    = 148.0
+offset_right  = 360.0
+offset_bottom = 186.0
+theme_override_colors/font_color    = Color(0.91, 0.30, 0.24, 1)
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 18
+text = "ADVANCED"
+
+[node name="CardBtn" type="Button" parent="CanvasLayer/CardsContainer/HeapCard"]
+offset_right  = 380.0
+offset_bottom = 200.0
+flat = true
+theme_override_styles/normal  = SubResource("SB_empty")
+theme_override_styles/hover   = SubResource("SB_empty")
+theme_override_styles/pressed = SubResource("SB_empty")
+theme_override_styles/focus   = SubResource("SB_empty")
+
+[node name="TimCard" type="Panel" parent="CanvasLayer/CardsContainer"]
+offset_left   = 975.0
+offset_top    = 535.0
+offset_right  = 1355.0
+offset_bottom = 735.0
+theme_override_styles/panel = SubResource("SB_adv")
+metadata/algo = "Tim Sort"
+
+[node name="AccentBar" type="ColorRect" parent="CanvasLayer/CardsContainer/TimCard"]
+offset_right  = 380.0
+offset_bottom = 4.0
+color = Color(0.91, 0.30, 0.24, 0.5)
+
+[node name="AlgoName" type="Label" parent="CanvasLayer/CardsContainer/TimCard"]
+offset_left   = 20.0
+offset_top    = 20.0
+offset_right  = 360.0
+offset_bottom = 130.0
+theme_override_colors/font_color         = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color  = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 36
+text = "TIM SORT"
+autowrap_mode = 2
+
+[node name="TierName" type="Label" parent="CanvasLayer/CardsContainer/TimCard"]
+offset_left   = 20.0
+offset_top    = 148.0
+offset_right  = 360.0
+offset_bottom = 186.0
+theme_override_colors/font_color    = Color(0.91, 0.30, 0.24, 1)
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 18
+text = "ADVANCED"
+
+[node name="CardBtn" type="Button" parent="CanvasLayer/CardsContainer/TimCard"]
+offset_right  = 380.0
+offset_bottom = 200.0
+flat = true
+theme_override_styles/normal  = SubResource("SB_empty")
+theme_override_styles/hover   = SubResource("SB_empty")
+theme_override_styles/pressed = SubResource("SB_empty")
+theme_override_styles/focus   = SubResource("SB_empty")
+
+[node name="ShellCard" type="Panel" parent="CanvasLayer/CardsContainer"]
+offset_left   = 1385.0
+offset_top    = 535.0
+offset_right  = 1765.0
+offset_bottom = 735.0
+theme_override_styles/panel = SubResource("SB_adv")
+metadata/algo = "Shell Sort"
+
+[node name="AccentBar" type="ColorRect" parent="CanvasLayer/CardsContainer/ShellCard"]
+offset_right  = 380.0
+offset_bottom = 4.0
+color = Color(0.91, 0.30, 0.24, 0.5)
+
+[node name="AlgoName" type="Label" parent="CanvasLayer/CardsContainer/ShellCard"]
+offset_left   = 20.0
+offset_top    = 20.0
+offset_right  = 360.0
+offset_bottom = 130.0
+theme_override_colors/font_color         = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color  = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 36
+text = "SHELL SORT"
+autowrap_mode = 2
+
+[node name="TierName" type="Label" parent="CanvasLayer/CardsContainer/ShellCard"]
+offset_left   = 20.0
+offset_top    = 148.0
+offset_right  = 360.0
+offset_bottom = 186.0
+theme_override_colors/font_color    = Color(0.91, 0.30, 0.24, 1)
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 18
+text = "ADVANCED"
+
+[node name="CardBtn" type="Button" parent="CanvasLayer/CardsContainer/ShellCard"]
+offset_right  = 380.0
+offset_bottom = 200.0
+flat = true
+theme_override_styles/normal  = SubResource("SB_empty")
+theme_override_styles/hover   = SubResource("SB_empty")
+theme_override_styles/pressed = SubResource("SB_empty")
+theme_override_styles/focus   = SubResource("SB_empty")
+
+[node name="ModalOverlay" type="CanvasLayer" parent="CanvasLayer"]
+layer   = 10
+visible = false
+
+[node name="BgDim" type="ColorRect" parent="CanvasLayer/ModalOverlay"]
+offset_right  = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 0.75)
+mouse_filter  = 0
+
+[node name="ModalPanel" type="Panel" parent="CanvasLayer/ModalOverlay"]
+offset_left   = 260.0
+offset_top    = 90.0
+offset_right  = 1660.0
+offset_bottom = 990.0
+theme_override_styles/panel = SubResource("SB_modal")
+
+[node name="BoltTL" type="ColorRect" parent="CanvasLayer/ModalOverlay/ModalPanel"]
+offset_left   = 12.0
+offset_top    = 16.0
+offset_right  = 24.0
+offset_bottom = 28.0
+color = Color(0.549, 0.392, 0.055, 0.8)
+
+[node name="BoltTR" type="ColorRect" parent="CanvasLayer/ModalOverlay/ModalPanel"]
+offset_left   = 1376.0
+offset_top    = 16.0
+offset_right  = 1388.0
+offset_bottom = 28.0
+color = Color(0.549, 0.392, 0.055, 0.8)
+
+[node name="BoltBL" type="ColorRect" parent="CanvasLayer/ModalOverlay/ModalPanel"]
+offset_left   = 12.0
+offset_top    = 872.0
+offset_right  = 24.0
+offset_bottom = 884.0
+color = Color(0.549, 0.392, 0.055, 0.8)
+
+[node name="BoltBR" type="ColorRect" parent="CanvasLayer/ModalOverlay/ModalPanel"]
+offset_left   = 1376.0
+offset_top    = 872.0
+offset_right  = 1388.0
+offset_bottom = 884.0
+color = Color(0.549, 0.392, 0.055, 0.8)
+
+[node name="ModalTitle" type="Label" parent="CanvasLayer/ModalOverlay/ModalPanel"]
+offset_left   = 30.0
+offset_top    = 18.0
+offset_right  = 1300.0
+offset_bottom = 66.0
+theme_override_colors/font_color         = Color(0.941, 0.753, 0.251, 1)
+theme_override_colors/font_shadow_color  = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 36
+text = ""
+
+[node name="CloseBtn" type="Button" parent="CanvasLayer/ModalOverlay/ModalPanel"]
+offset_left   = 1320.0
+offset_top    = 14.0
+offset_right  = 1388.0
+offset_bottom = 66.0
+theme_override_colors/font_color    = Color(0.941, 0.753, 0.251, 1)
+theme_override_fonts/font           = ExtResource("4_font")
+theme_override_font_sizes/font_size = 32
+text = "X"
+flat = true
+
+[node name="TitleDivider" type="ColorRect" parent="CanvasLayer/ModalOverlay/ModalPanel"]
+offset_left   = 20.0
+offset_top    = 70.0
+offset_right  = 1380.0
+offset_bottom = 73.0
+color = Color(0.549, 0.392, 0.055, 0.6)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/ModalOverlay/ModalPanel"]
+offset_left   = 20.0
+offset_top    = 80.0
+offset_right  = 1380.0
+offset_bottom = 882.0
+theme_override_styles/panel = SubResource("SB_scroll_bg")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/ModalOverlay/ModalPanel/ScrollContainer"]
+layout_mode           = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 18
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream    = ExtResource("6_4c15j")
+volume_db = 1.0
+autoplay  = true
