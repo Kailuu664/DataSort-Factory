@@ -1,0 +1,137 @@
+[gd_scene format=3 uid="uid://dvancedmode"]
+
+[ext_resource type="Script" uid="uid://c10qk8vbi7u0u" path="res://scenes/advancedmode.gd" id="1_excd6"]
+[ext_resource type="Texture2D" uid="uid://716fnheaij76" path="res://assets/ui/difficulty_background.png" id="2_6vomp"]
+[ext_resource type="Texture2D" uid="uid://cmk64htjkc3bc" path="res://assets/ui/btnBack.png" id="3_back"]
+[ext_resource type="Script" uid="uid://dnm66qsbvnb2c" path="res://scripts/backbtn(2).gd" id="4_backscr"]
+[ext_resource type="Texture2D" uid="uid://bl8bfavhi45kn" path="res://assets/ui/ashell.png" id="5_shell"]
+[ext_resource type="Script" uid="uid://bp42ki6vtdpj2" path="res://scripts/shellbtn.gd" id="6_shellbtn"]
+[ext_resource type="Texture2D" uid="uid://ceu0gtd40c46a" path="res://assets/ui/atimsortbtn.png" id="8_6vomp"]
+[ext_resource type="Script" uid="uid://bapd3bluybcl6" path="res://scripts/timbtn.gd" id="8_timbtn"]
+[ext_resource type="Texture2D" uid="uid://iq128swa086k" path="res://assets/ui/aheap.png" id="9_heap"]
+[ext_resource type="Script" uid="uid://cjwr3xsf6kd1b" path="res://scripts/heapbtn.gd" id="10_heapbtn"]
+[ext_resource type="Texture2D" uid="uid://nk4dxvild2dm" path="res://assets/ui/smoke.png" id="11_smoke"]
+[ext_resource type="Texture2D" uid="uid://dtwa4uxknse5s" path="res://assets/ui/gauge.png" id="12_gauge"]
+[ext_resource type="Script" uid="uid://583rm178iva7" path="res://scripts/sprite_2d.gd" id="13_s2d"]
+[ext_resource type="Texture2D" uid="uid://jpl4j5d5di2l" path="res://assets/ui/aadvanced.png" id="15_1ttus"]
+[ext_resource type="AudioStream" uid="uid://cvxmhq753iput" path="res://assets/music/cyberwave-orchestra-puzzle-game-bright-casual-video-game-music-249202.mp3" id="15_bgm"]
+
+[sub_resource type="ParticleProcessMaterial" id="PPM_1"]
+particle_flag_disable_z = true
+direction = Vector3(1, -1, 0)
+spread = 10.0
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+gravity = Vector3(0, -10, 0)
+scale_min = 0.29999998
+scale_max = 0.79999995
+
+[sub_resource type="ParticleProcessMaterial" id="PPM_2"]
+particle_flag_disable_z = true
+direction = Vector3(1, -1, 0)
+spread = 10.0
+initial_velocity_min = 20.0
+initial_velocity_max = 40.0
+gravity = Vector3(0, -10, 0)
+scale_min = 0.29999998
+scale_max = 0.79999995
+
+[node name="advancemode" type="Node2D" unique_id=1082390796]
+script = ExtResource("1_excd6")
+
+[node name="diffbg" type="TextureRect" parent="." unique_id=1272683999]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 1918.0
+offset_bottom = 1078.0
+texture = ExtResource("2_6vomp")
+
+[node name="Backbtn(2)" type="Button" parent="diffbg" unique_id=1564409187]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 30.0
+offset_right = 315.0
+offset_bottom = 163.0
+icon = ExtResource("3_back")
+flat = true
+expand_icon = true
+script = ExtResource("4_backscr")
+
+[node name="shell" type="Button" parent="diffbg" unique_id=2113258912]
+layout_mode = 0
+offset_left = 541.0
+offset_top = 628.0
+offset_right = 1309.0
+offset_bottom = 786.0
+icon = ExtResource("5_shell")
+flat = true
+expand_icon = true
+script = ExtResource("6_shellbtn")
+
+[node name="timsort" type="Button" parent="diffbg" unique_id=1061938000]
+layout_mode = 0
+offset_left = 537.0
+offset_top = 433.0
+offset_right = 1277.0
+offset_bottom = 591.0
+icon = ExtResource("8_6vomp")
+flat = true
+expand_icon = true
+script = ExtResource("8_timbtn")
+
+[node name="heap" type="Button" parent="diffbg" unique_id=1375375983]
+layout_mode = 0
+offset_left = 538.0
+offset_top = 235.0
+offset_right = 1306.0
+offset_bottom = 393.0
+icon = ExtResource("9_heap")
+flat = true
+expand_icon = true
+script = ExtResource("10_heapbtn")
+
+[node name="smoke" type="GPUParticles2D" parent="." unique_id=683745978]
+visible = false
+position = Vector2(1491, 416)
+texture = ExtResource("11_smoke")
+lifetime = 3.0
+process_material = SubResource("PPM_1")
+
+[node name="smoke2" type="GPUParticles2D" parent="." unique_id=1855094719]
+visible = false
+position = Vector2(1904, 315)
+texture = ExtResource("11_smoke")
+lifetime = 3.0
+process_material = SubResource("PPM_2")
+
+[node name="gauge" type="Sprite2D" parent="." unique_id=35779339]
+position = Vector2(1724, 445)
+scale = Vector2(0.11281596, 0.09322032)
+texture = ExtResource("12_gauge")
+script = ExtResource("13_s2d")
+
+[node name="gauge2" type="Sprite2D" parent="." unique_id=1215895529]
+position = Vector2(1846.0001, 447)
+scale = Vector2(0.11281596, 0.09322032)
+texture = ExtResource("12_gauge")
+script = ExtResource("13_s2d")
+
+[node name="gauge3" type="Sprite2D" parent="." unique_id=1960793911]
+position = Vector2(1737, 91.000015)
+scale = Vector2(0.11281596, 0.09322032)
+texture = ExtResource("12_gauge")
+script = ExtResource("13_s2d")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1804925437]
+stream = ExtResource("15_bgm")
+volume_db = 1.0
+autoplay = true
+
+[node name="Aadvanced" type="Sprite2D" parent="." unique_id=2136675151]
+position = Vector2(836, 138)
+texture = ExtResource("15_1ttus")
+
+[connection signal="pressed" from="diffbg/Backbtn(2)" to="diffbg/Backbtn(2)" method="_on_pressed"]
+[connection signal="pressed" from="diffbg/shell" to="diffbg/shell" method="_on_pressed"]
+[connection signal="pressed" from="diffbg/timsort" to="diffbg/timsort" method="_on_pressed"]
+[connection signal="pressed" from="diffbg/heap" to="diffbg/heap" method="_on_pressed"]
